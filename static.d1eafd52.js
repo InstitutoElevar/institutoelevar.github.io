@@ -547,28 +547,28 @@ exports.default = function (_ref) {
     description: 'modalities.m1.description',
     button: 'modalities.m1.button',
     link: 'applyScholar',
-    iconClass: '--school',
+    className: '--school',
     Icon: _icons.SchoolIcon
   }, {
     title: 'modalities.m2.title',
     description: 'modalities.m2.description',
     button: 'modalities.m2.button',
     link: 'contact',
-    iconClass: '--hand',
+    className: '--hand',
     Icon: _icons.HandIcon
   }, {
     title: 'modalities.m3.title',
     description: 'modalities.m3.description',
     button: 'modalities.m3.button',
     link: 'contact',
-    iconClass: '--money',
+    className: '--money',
     Icon: _icons.MoneyIcon
   }, {
     title: 'modalities.m4.title',
     description: 'modalities.m4.description',
     button: 'modalities.m4.button',
     link: 'contact',
-    iconClass: '--person',
+    className: '--person',
     Icon: _icons.PersonIcon
   }];
 
@@ -577,14 +577,14 @@ exports.default = function (_ref) {
         description = _ref2.description,
         button = _ref2.button,
         link = _ref2.link,
-        iconClass = _ref2.iconClass,
+        className = _ref2.className,
         Icon = _ref2.Icon;
     return _react2.default.createElement(
       'div',
-      { className: 'home-mds__item', key: title },
+      { className: 'home-mds__item ' + className, key: title },
       _react2.default.createElement(
         'div',
-        { className: 'home-mds__item--icon-wrapper ' + iconClass },
+        { className: 'home-mds__item--icon-wrapper ' + className },
         _react2.default.createElement(
           'span',
           { className: 'home-mds__item--icon' },
@@ -1040,12 +1040,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = function () {
   return _react2.default.createElement(
-    'div',
-    null,
+    "div",
+    { className: "page404" },
     _react2.default.createElement(
-      'h1',
+      "h1",
       null,
-      '404 - Oh no\'s! We couldn\'t find that page :('
+      "404 - Oh no's! We couldn't find that page :("
     )
   );
 };
@@ -1123,11 +1123,15 @@ var _reactStaticRoutes = __webpack_require__(24);
 
 var _reactStaticRoutes2 = _interopRequireDefault(_reactStaticRoutes);
 
-var _layout = __webpack_require__(73);
+var _reactGa = __webpack_require__(73);
 
-__webpack_require__(79);
+var _reactGa2 = _interopRequireDefault(_reactGa);
 
-__webpack_require__(90);
+var _layout = __webpack_require__(74);
+
+__webpack_require__(80);
+
+__webpack_require__(91);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1162,6 +1166,11 @@ var App = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       window.addEventListener('scroll', scrollHandler);
+
+      if (true) {
+        _reactGa2.default.initialize('UA-116315345-1');
+        _reactGa2.default.pageview(window.location.pathname + window.location.search);
+      }
     }
   }, {
     key: 'render',
@@ -3001,7 +3010,7 @@ exports.default = function (_ref) {
     ),
     _react2.default.createElement(
       "text",
-      { fontFamily: "Albertus Medium", fontWeight: "100", fontSize: "50", transform: "translate(152.45 217.7)", fill: "#ffffff" },
+      { fontFamily: "Futura", fontWeight: "100", fontSize: "50", transform: "translate(152.45 217.7)", fill: "#ffffff" },
       "Instituto"
     ),
     _react2.default.createElement(
@@ -3232,6 +3241,12 @@ exports.default = function () {
 
 /***/ }),
 /* 73 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-ga");
+
+/***/ }),
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3242,11 +3257,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Header = exports.Footer = undefined;
 
-var _footer = __webpack_require__(74);
+var _footer = __webpack_require__(75);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _header = __webpack_require__(76);
+var _header = __webpack_require__(77);
 
 var _header2 = _interopRequireDefault(_header);
 
@@ -3256,7 +3271,7 @@ exports.Footer = _footer2.default;
 exports.Header = _header2.default;
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3274,7 +3289,7 @@ var _reactI18next = __webpack_require__(1);
 
 var _logo = __webpack_require__(6);
 
-__webpack_require__(75);
+__webpack_require__(76);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3304,13 +3319,13 @@ var Footer = function Footer(_ref) {
 exports.default = (0, _reactI18next.translate)('footer')(Footer);
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3326,7 +3341,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactI18next = __webpack_require__(1);
 
-var _header_hoc = __webpack_require__(77);
+var _header_hoc = __webpack_require__(78);
 
 var _header_hoc2 = _interopRequireDefault(_header_hoc);
 
@@ -3334,7 +3349,7 @@ var _logo = __webpack_require__(6);
 
 var _icons = __webpack_require__(2);
 
-__webpack_require__(78);
+__webpack_require__(79);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3466,7 +3481,7 @@ var Header = function Header(_ref) {
 exports.default = (0, _reactI18next.translate)('header')((0, _header_hoc2.default)(Header));
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3554,13 +3569,13 @@ var HeaderHOCWrapper = function HeaderHOCWrapper(InnerComponent) {
 exports.default = HeaderHOCWrapper;
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3570,21 +3585,21 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _i18next = __webpack_require__(80);
+var _i18next = __webpack_require__(81);
 
 var _i18next2 = _interopRequireDefault(_i18next);
 
-var _i18nextBrowserLanguagedetector = __webpack_require__(81);
+var _i18nextBrowserLanguagedetector = __webpack_require__(82);
 
 var _i18nextBrowserLanguagedetector2 = _interopRequireDefault(_i18nextBrowserLanguagedetector);
 
 var _reactI18next = __webpack_require__(1);
 
-var _en = __webpack_require__(82);
+var _en = __webpack_require__(83);
 
 var en = _interopRequireWildcard(_en);
 
-var _ptBR = __webpack_require__(86);
+var _ptBR = __webpack_require__(87);
 
 var ptBR = _interopRequireWildcard(_ptBR);
 
@@ -3621,19 +3636,19 @@ _i18next2.default.use(_i18nextBrowserLanguagedetector2.default).use(_reactI18nex
 exports.default = _i18next2.default;
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports) {
 
 module.exports = require("i18next");
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports) {
 
 module.exports = require("i18next-browser-languagedetector");
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3644,15 +3659,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.home = exports.header = exports.footer = undefined;
 
-var _footer = __webpack_require__(83);
+var _footer = __webpack_require__(84);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _header = __webpack_require__(84);
+var _header = __webpack_require__(85);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _home = __webpack_require__(85);
+var _home = __webpack_require__(86);
 
 var _home2 = _interopRequireDefault(_home);
 
@@ -3663,7 +3678,7 @@ exports.header = _header2.default;
 exports.home = _home2.default;
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3677,7 +3692,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3695,7 +3710,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3780,7 +3795,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3791,15 +3806,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.home = exports.header = exports.footer = undefined;
 
-var _footer = __webpack_require__(87);
+var _footer = __webpack_require__(88);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _header = __webpack_require__(88);
+var _header = __webpack_require__(89);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _home = __webpack_require__(89);
+var _home = __webpack_require__(90);
 
 var _home2 = _interopRequireDefault(_home);
 
@@ -3810,7 +3825,7 @@ exports.header = _header2.default;
 exports.home = _home2.default;
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3824,7 +3839,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3842,7 +3857,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3927,7 +3942,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -3935,4 +3950,4 @@ exports.default = {
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.2184e0fe.js.map
+//# sourceMappingURL=static.d1eafd52.js.map
