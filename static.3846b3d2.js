@@ -67,7 +67,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "https://institutoelevar.github.io/";
+/******/ 	__webpack_require__.p = "http://institutoelevar.github.io/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 20);
@@ -3950,4 +3950,4 @@ exports.default = {
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.d1eafd52.js.map
+//# sourceMappingURL=static.3846b3d2.js.map
