@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "http://institutoelevar.github.io/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 21);
+/******/ 	return __webpack_require__(__webpack_require__.s = 20);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -456,7 +456,7 @@ var _reactStatic = __webpack_require__(5);
 
 var _reactI18next = __webpack_require__(1);
 
-var _home_hoc = __webpack_require__(31);
+var _home_hoc = __webpack_require__(30);
 
 var _home_hoc2 = _interopRequireDefault(_home_hoc);
 
@@ -489,12 +489,6 @@ exports.default = (0, _reactI18next.translate)('home')((0, _home_hoc2.default)(H
 
 /***/ }),
 /* 13 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router");
-
-/***/ }),
-/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -551,7 +545,7 @@ exports.default = function (_ref) {
 };
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -675,7 +669,7 @@ exports.default = function (_ref) {
 };
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -771,7 +765,7 @@ exports.default = function (_ref) {
 // import { StairsLoader } from '../../common'
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -827,7 +821,7 @@ exports.default = function (_ref) {
 };
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1005,7 +999,7 @@ exports.default = function (_ref) {
 };
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1058,7 +1052,7 @@ var ContactSection = function ContactSection(_ref) {
 exports.default = ContactSection;
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1073,8 +1067,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
-
-var _reactRouter = __webpack_require__(13);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1096,7 +1088,9 @@ var Class404 = function (_Component) {
   _createClass(Class404, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
-      this.props.history.push('/');
+      if (typeof window !== 'undefined' && window) {
+        window.location.href = '/';
+      }
     }
   }, {
     key: 'render',
@@ -1108,10 +1102,10 @@ var Class404 = function (_Component) {
   return Class404;
 }(_react.Component);
 
-exports.default = (0, _reactRouter.withRouter)(Class404);
+exports.default = Class404;
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1125,11 +1119,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(22);
+var _reactDom = __webpack_require__(21);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _App = __webpack_require__(23);
+var _App = __webpack_require__(22);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -1153,13 +1147,13 @@ if (typeof document !== 'undefined') {
 }
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom");
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1177,9 +1171,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStatic = __webpack_require__(5);
 
-var _reactHotLoader = __webpack_require__(24);
+var _reactHotLoader = __webpack_require__(23);
 
-var _reactStaticRoutes = __webpack_require__(25);
+var _reactStaticRoutes = __webpack_require__(24);
 
 var _reactStaticRoutes2 = _interopRequireDefault(_reactStaticRoutes);
 
@@ -1260,13 +1254,13 @@ exports.default = (0, _reactHotLoader.hot)(module)(App);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-hot-loader");
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1296,9 +1290,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(26);
+var _reactRouterDom = __webpack_require__(25);
 
-var _reactUniversalComponent = __webpack_require__(27);
+var _reactUniversalComponent = __webpack_require__(26);
 
 var _reactUniversalComponent2 = _interopRequireDefault(_reactUniversalComponent);
 
@@ -1352,7 +1346,7 @@ var t_1 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
   id: '../src/404',
   file: '/Users/lucas/Documents/InstitutoElevar/institutoelevar-site/dist/react-static-routes.js',
   load: function load() {
-    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 20)), (0, _importCss3.default)('src/404', {
+    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 19)), (0, _importCss3.default)('src/404', {
       disableWarnings: true
     })]).then(function (proms) {
       return proms[0];
@@ -1362,7 +1356,7 @@ var t_1 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
     return _path3.default.join(__dirname, '../src/404');
   },
   resolve: function resolve() {
-    return /*require.resolve*/(20);
+    return /*require.resolve*/(19);
   },
   chunkName: function chunkName() {
     return 'src/404';
@@ -1446,13 +1440,13 @@ exports.default = Routes;
 /* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router-dom");
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1467,7 +1461,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _requireUniversalModule = __webpack_require__(28);
+var _requireUniversalModule = __webpack_require__(27);
 
 Object.defineProperty(exports, 'CHUNK_NAMES', {
   enumerable: true,
@@ -1482,7 +1476,7 @@ Object.defineProperty(exports, 'MODULE_IDS', {
   }
 });
 
-var _reportChunks = __webpack_require__(29);
+var _reportChunks = __webpack_require__(28);
 
 Object.defineProperty(exports, 'ReportChunks', {
   enumerable: true,
@@ -1499,7 +1493,7 @@ var _propTypes = __webpack_require__(11);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _hoistNonReactStatics = __webpack_require__(30);
+var _hoistNonReactStatics = __webpack_require__(29);
 
 var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
 
@@ -1795,7 +1789,7 @@ exports.default = universal;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1977,7 +1971,7 @@ var getConfig = function getConfig(isDynamic, universalConfig, options, props) {
 };
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2040,13 +2034,13 @@ ReportChunks.childContextTypes = {
 exports.default = ReportChunks;
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports) {
 
 module.exports = require("hoist-non-react-statics");
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2076,7 +2070,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouter = __webpack_require__(13);
+var _reactRouter = __webpack_require__(31);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2115,7 +2109,7 @@ var HomeHOCWrapper = function HomeHOCWrapper(InnerComponent) {
           id: './scholarship_section/scholarship_section',
           file: '/Users/lucas/Documents/InstitutoElevar/institutoelevar-site/src/components/home/home_hoc.js',
           load: function load() {
-            return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 14)), (0, _importCss3.default)('scholarship_section/scholarship_section', {
+            return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 13)), (0, _importCss3.default)('scholarship_section/scholarship_section', {
               disableWarnings: true
             })]).then(function (proms) {
               return proms[0];
@@ -2125,7 +2119,7 @@ var HomeHOCWrapper = function HomeHOCWrapper(InnerComponent) {
             return _path3.default.join(__dirname, './scholarship_section/scholarship_section');
           },
           resolve: function resolve() {
-            return /*require.resolve*/(14);
+            return /*require.resolve*/(13);
           },
           chunkName: function chunkName() {
             return 'scholarship_section/scholarship_section';
@@ -2134,7 +2128,7 @@ var HomeHOCWrapper = function HomeHOCWrapper(InnerComponent) {
           id: './modalities_section/modalities_section',
           file: '/Users/lucas/Documents/InstitutoElevar/institutoelevar-site/src/components/home/home_hoc.js',
           load: function load() {
-            return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 15)), (0, _importCss3.default)('modalities_section/modalities_section', {
+            return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 14)), (0, _importCss3.default)('modalities_section/modalities_section', {
               disableWarnings: true
             })]).then(function (proms) {
               return proms[0];
@@ -2144,7 +2138,7 @@ var HomeHOCWrapper = function HomeHOCWrapper(InnerComponent) {
             return _path3.default.join(__dirname, './modalities_section/modalities_section');
           },
           resolve: function resolve() {
-            return /*require.resolve*/(15);
+            return /*require.resolve*/(14);
           },
           chunkName: function chunkName() {
             return 'modalities_section/modalities_section';
@@ -2153,7 +2147,7 @@ var HomeHOCWrapper = function HomeHOCWrapper(InnerComponent) {
           id: './apply_scholar_section/apply_scholar_section',
           file: '/Users/lucas/Documents/InstitutoElevar/institutoelevar-site/src/components/home/home_hoc.js',
           load: function load() {
-            return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 16)), (0, _importCss3.default)('apply_scholar_section/apply_scholar_section', {
+            return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 15)), (0, _importCss3.default)('apply_scholar_section/apply_scholar_section', {
               disableWarnings: true
             })]).then(function (proms) {
               return proms[0];
@@ -2163,7 +2157,7 @@ var HomeHOCWrapper = function HomeHOCWrapper(InnerComponent) {
             return _path3.default.join(__dirname, './apply_scholar_section/apply_scholar_section');
           },
           resolve: function resolve() {
-            return /*require.resolve*/(16);
+            return /*require.resolve*/(15);
           },
           chunkName: function chunkName() {
             return 'apply_scholar_section/apply_scholar_section';
@@ -2172,7 +2166,7 @@ var HomeHOCWrapper = function HomeHOCWrapper(InnerComponent) {
           id: './sponsorships_section/sponsorships_section',
           file: '/Users/lucas/Documents/InstitutoElevar/institutoelevar-site/src/components/home/home_hoc.js',
           load: function load() {
-            return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 17)), (0, _importCss3.default)('sponsorships_section/sponsorships_section', {
+            return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 16)), (0, _importCss3.default)('sponsorships_section/sponsorships_section', {
               disableWarnings: true
             })]).then(function (proms) {
               return proms[0];
@@ -2182,7 +2176,7 @@ var HomeHOCWrapper = function HomeHOCWrapper(InnerComponent) {
             return _path3.default.join(__dirname, './sponsorships_section/sponsorships_section');
           },
           resolve: function resolve() {
-            return /*require.resolve*/(17);
+            return /*require.resolve*/(16);
           },
           chunkName: function chunkName() {
             return 'sponsorships_section/sponsorships_section';
@@ -2191,7 +2185,7 @@ var HomeHOCWrapper = function HomeHOCWrapper(InnerComponent) {
           id: './contributors_section/contributors_section',
           file: '/Users/lucas/Documents/InstitutoElevar/institutoelevar-site/src/components/home/home_hoc.js',
           load: function load() {
-            return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 18)), (0, _importCss3.default)('contributors_section/contributors_section', {
+            return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 17)), (0, _importCss3.default)('contributors_section/contributors_section', {
               disableWarnings: true
             })]).then(function (proms) {
               return proms[0];
@@ -2201,7 +2195,7 @@ var HomeHOCWrapper = function HomeHOCWrapper(InnerComponent) {
             return _path3.default.join(__dirname, './contributors_section/contributors_section');
           },
           resolve: function resolve() {
-            return /*require.resolve*/(18);
+            return /*require.resolve*/(17);
           },
           chunkName: function chunkName() {
             return 'contributors_section/contributors_section';
@@ -2210,7 +2204,7 @@ var HomeHOCWrapper = function HomeHOCWrapper(InnerComponent) {
           id: './contact_section/contact_section',
           file: '/Users/lucas/Documents/InstitutoElevar/institutoelevar-site/src/components/home/home_hoc.js',
           load: function load() {
-            return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 19)), (0, _importCss3.default)('contact_section/contact_section', {
+            return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 18)), (0, _importCss3.default)('contact_section/contact_section', {
               disableWarnings: true
             })]).then(function (proms) {
               return proms[0];
@@ -2220,7 +2214,7 @@ var HomeHOCWrapper = function HomeHOCWrapper(InnerComponent) {
             return _path3.default.join(__dirname, './contact_section/contact_section');
           },
           resolve: function resolve() {
-            return /*require.resolve*/(19);
+            return /*require.resolve*/(18);
           },
           chunkName: function chunkName() {
             return 'contact_section/contact_section';
@@ -2256,6 +2250,12 @@ var HomeHOCWrapper = function HomeHOCWrapper(InnerComponent) {
 
 exports.default = HomeHOCWrapper;
 /* WEBPACK VAR INJECTION */}.call(exports, "/"))
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router");
 
 /***/ }),
 /* 32 */
@@ -4004,4 +4004,4 @@ exports.default = {
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.7c0ee899.js.map
+//# sourceMappingURL=static.b196721e.js.map
